@@ -2,14 +2,14 @@ import query from "../../db/index.js";
 
 const editUser = async (req, res) => {
   const username = req.params.username;
-  const email = req.body.email;
   const name = req.body.name;
+  const email = req.body.email;
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
 
   const dbRes = await query(
-    "UPDATE users SET email=$1 name=$2 WHERE username=$3",
-    [email, name, username]
+    "UPDATE users SET name=$1 email=$2 WHERE username=$3",
+    [name, email, username]
   );
 
   if (token === null) {
