@@ -1,5 +1,4 @@
 import query from "../../db/index.js";
-import bcrypt from "bcryptjs";
 
 const editProject = async (req, res) => {
   const id = req.params.id;

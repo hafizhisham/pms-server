@@ -8,7 +8,7 @@ const editUser = async (req, res) => {
   const token = authHeader && authHeader.split(" ")[1];
 
   const dbRes = await query(
-    "UPDATE users SET name=$1 email=$2 WHERE username=$3",
+    "UPDATE users SET name=$1, email=$2 WHERE username=$3",
     [name, email, username]
   );
 
