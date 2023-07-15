@@ -18,6 +18,7 @@ import listAllProject from "./controller/project/listAllProject.js";
 import deleteProject from "./controller/project/deleteProject.js";
 import editProject from "./controller/project/editProject.js";
 import resetPassword from "./controller/user/resetpassword.js";
+import ipaddress from "./controller/ipaddress/index.js";
 
 const app = express();
 app.use(express.json());
@@ -66,5 +67,8 @@ app.get("/api/projects/:id", isAuthenticated, viewProject);
 app.get("/api/projects", isAuthenticated, listAllProject);
 app.put("/api/projects/:id", isAuthenticated, editProject);
 app.delete("/api/projects/:id", isAuthenticated, deleteProject);
+
+// get ip address
+app.get("/api/ipaddress", ipaddress);
 
 export default app;
