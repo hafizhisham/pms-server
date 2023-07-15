@@ -2,7 +2,7 @@ import query from "../../db/index.js";
 
 const view = async (req, res) => {
   const username = req.params.username;
-  const dbRes = await query("SELECT * FROM users WHERE username=$1", [
+  const dbRes = await query("SELECT username, email, name, FROM users WHERE username=$1", [
     username,
   ]);
   if (dbRes.rows.length === 0) {

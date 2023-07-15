@@ -29,10 +29,10 @@ const login = async (req, res) => {
       if (bcryptRes) {
         const token = generateAccessToken({
           id: user.id,
-          name: user.name,
+          // name: user.name,
           username: user.username,
-          email: user.email,
-          isAdmin: user.is_admin,
+          // email: user.email,
+          // isAdmin: user.is_admin,
         });
 
         const serverRes = {
